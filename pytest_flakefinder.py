@@ -75,6 +75,7 @@ class FlakeFinderPlugin(object):
             if not getattr(item.function, '_pytest_duplicated', None):
                 for i in range(self.flake_runs - 1):
                     cpy = copy.copy(item)
+                    cpy.name = f"{cpy.name}_{i}"
                     # HAX
                     # Ensure initialization for the copied request works for _pytest.TestCaseFunction
                     # without this, funcargs ends up being None
