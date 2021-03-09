@@ -77,7 +77,6 @@ class FlakeFinderPlugin(object):
                     cpy = copy.copy(item)
                     cpy.name = f"{cpy.name}_{i}"
                     cpy.originalname = f"{cpy.originalname}_{i}"
-                    raise Exception(cpy.__dict__)
                     # HAX
                     # Ensure initialization for the copied request works for _pytest.TestCaseFunction
                     # without this, funcargs ends up being None
