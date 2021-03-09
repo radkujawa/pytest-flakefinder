@@ -76,6 +76,7 @@ class FlakeFinderPlugin(object):
                 for i in range(self.flake_runs - 1):
                     cpy = copy.copy(item)
                     cpy.name = f"{cpy.name}_{i}"
+                    raise Exception(str(cpy))
                     # HAX
                     # Ensure initialization for the copied request works for _pytest.TestCaseFunction
                     # without this, funcargs ends up being None
